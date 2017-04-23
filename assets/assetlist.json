@@ -1,0 +1,22 @@
+{
+  "data": [
+  ],
+  "images": [
+    {
+      "key": "bgStars",
+      "url": "assets/gfx/backgrounds/stars.png"
+    }
+  ],
+  "spritesheets": [
+    {
+      "key": "sprKeen",
+      "url": "assets/gfx/sprites/keen/sprites.json"
+    }
+  ],
+  "audio": [
+    {
+      "key": "bgmTheme",
+      "url": "assets/audio/music/theme.ogg"
+    }
+  ]
+}

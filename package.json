@@ -1,0 +1,14 @@
+{
+  "name": "pixijs-template-game",
+  "private": true,
+  "main": "main.js",
+  "scripts": {
+    "test": "gulp && electron . --debug"
+  },
+  "devDependencies": {
+    "express": "^4.15.2",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "ink-docstrap": "^1.3.0"
+  }
+}

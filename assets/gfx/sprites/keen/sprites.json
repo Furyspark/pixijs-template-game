@@ -1,0 +1,45 @@
+{
+"frames": {
+	"keen_idle_001.png": {
+		"frame": {"x":38, "y":33, "w":13, "h":32},
+		"spriteSourceSize": {"x":10,"y":0,"w":32,"h":62},
+		"sourceSize": {"w":32,"h":62},
+		"trimmed": true,
+		"rotated": false
+	},
+	"keen_move_001.png": {
+		"frame": {"x":20, "y":30, "w":17, "h":30},
+		"spriteSourceSize": {"x":9,"y":2,"w":32,"h":62},
+		"sourceSize": {"w":32,"h":62},
+		"trimmed": true,
+		"rotated": false
+	},
+	"keen_move_002.png": {
+		"frame": {"x":0, "y":30, "w":19, "h":30},
+		"spriteSourceSize": {"x":6,"y":2,"w":32,"h":62},
+		"sourceSize": {"w":32,"h":62},
+		"trimmed": true,
+		"rotated": false
+	},
+	"keen_move_003.png": {
+		"frame": {"x":38, "y":0, "w":16, "h":32},
+		"spriteSourceSize": {"x":6,"y":0,"w":32,"h":62},
+		"sourceSize": {"w":32,"h":62},
+		"trimmed": true,
+		"rotated": false
+	},
+	"keen_move_004.png": {
+		"frame": {"x":0, "y":0, "w":20, "h":29},
+		"spriteSourceSize": {"x":7,"y":3,"w":32,"h":62},
+		"sourceSize": {"w":32,"h":62},
+		"trimmed": true,
+		"rotated": false
+	}
+
+},
+"meta": {
+	"image": "sprites.png",
+	"size": {"w": 55, "h": 66},
+	"scale": "1"
+}
+}

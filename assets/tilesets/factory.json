@@ -1,0 +1,11 @@
+{ "columns":7,
+ "image":"..\/gfx\/tilesets\/factory.png",
+ "imageheight":100,
+ "imagewidth":140,
+ "margin":2,
+ "name":"factory",
+ "spacing":4,
+ "tilecount":35,
+ "tileheight":16,
+ "tilewidth":16
+}

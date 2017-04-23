@@ -1,0 +1,11 @@
+{ "columns":20,
+ "image":"..\/gfx\/tilesets\/pillar.png",
+ "imageheight":320,
+ "imagewidth":400,
+ "margin":2,
+ "name":"pillar",
+ "spacing":4,
+ "tilecount":320,
+ "tileheight":16,
+ "tilewidth":16
+}
