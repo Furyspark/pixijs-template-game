@@ -53,9 +53,9 @@ Scene_Base.prototype.resume = function() {}
 Scene_Base.prototype.pause = function() {}
 
 /**
-* Updates this scene's logic once evey frame.
-* @abstract
-*/
+ * Updates this scene's logic once evey frame.
+ * @abstract
+ */
 Scene_Base.prototype.update = function() {}
 
 /**

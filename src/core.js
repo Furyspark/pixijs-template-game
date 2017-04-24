@@ -105,8 +105,9 @@ Core.startManagers = function() {
  */
 Core.update = function(time) {
   requestAnimationFrame(this.update.bind(this));
-  SceneManager.update();
+  InputManager.update();
   TweenManager.update(time);
+  SceneManager.update();
   this.render();
 }
 

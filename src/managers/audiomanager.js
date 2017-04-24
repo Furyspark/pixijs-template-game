@@ -14,6 +14,11 @@ AudioManager.cache = new Cache();
  * @type {number}
  */
 AudioManager._audioLoaded = 0;
+/**
+ * Currently playing music.
+ * @type {SoundFile}
+ */
+AudioManager.music = null;
 
 /**
  * Loads an audio file.
@@ -31,4 +36,33 @@ AudioManager.loadAudio = function(key, url) {
     }, this);
   }
   return loader;
+}
+
+/**
+ * Plays a sound effect.
+ * @param {Howl} howl - The sound effect to play.
+ * @param {number} [volume=1] - The volume to play the sound at. From 0.0 to 1.0.
+ * @returns {SoundFile} The SoundFile created for this Howl.
+ */
+AudioManager.playSound = function(howl, volume) {
+  if(!volume && volume !== 0) volume = 1;
+  var snd = new SoundFile(howl, howl.play());
+  snd.volume = volume;
+  snd.loop = false;
+  return snd;
+}
+
+/**
+ * Plays music.
+ * @param {Howl} howl - The music to play.
+ * @param {number} [volume=1] - The volume of the music to play. From 0.0 to 1.0.
+ * @returns {SoundFile} The SoundFile created for this Howl.
+ */
+AudioManager.playMusic = function(howl, volume) {
+  if(!volume && volume !== 0) volume = 1;
+  if(this.music) this.music.stop();
+  this.music = new SoundFile(howl, howl.play());
+  this.music.volume = volume;
+  this.music.loop = true;
+  return this.music;
 }

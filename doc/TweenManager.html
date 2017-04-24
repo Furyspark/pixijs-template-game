@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Documentation Class: Tile</title>
+	<title>Documentation Namespace: TweenManager</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -72,16 +72,14 @@
 		<div id="main">
 			
 
-	<h1 class="page-title">Class: Tile</h1>
+	<h1 class="page-title">Namespace: TweenManager</h1>
 <section>
 
 <header>
     
         <h2>
-        Tile
+        TweenManager
         </h2>
-        
-            <div class="class-description">A tile for a tile-based map.</div>
         
     
 </header>
@@ -91,14 +89,82 @@
     <div class="container-overview">
     
         
+            <div class="description">Handles tweens.</div>
+        
+
+        
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        <dl>
+            
 <hr>
 <dt>
-    <h4 class="name" id="Tile"><span class="type-signature"></span>new Tile(texture)</h4>
+    <h4 class="name" id=".create"><span class="type-signature">&lt;static> </span>create(obj)</h4>
     
     
 </dt>
 <dd>
 
+    
+    <div class="description">
+        Creates a new tween.
+    </div>
     
 
     
@@ -132,13 +198,13 @@
 
         <tr>
             
-                <td class="name"><code>texture</code></td>
+                <td class="name"><code>obj</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">PIXI.Texture</span>
+<span class="param-type">Object</span>
 
 
 
@@ -149,7 +215,7 @@
 
             
 
-            <td class="description last">The texture used for this tile.</td>
+            <td class="description last">The object to tween.</td>
         </tr>
 
     
@@ -209,44 +275,39 @@
     
 
     
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    The newly created tween.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">TWEEN.Tween</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
 
     
 </dd>
 
-    
-    </div>
-
-    
-        <h3 class="subsection-title">Extends</h3>
-
         
-
-
-    <ul>
-        <li>PIXI.Sprite</li>
-    </ul>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <h3 class="subsection-title">Methods</h3>
-
-        <dl>
             
 <hr>
 <dt>
-    <h4 class="name" id="setProperty"><span class="type-signature"></span>setProperty(property, value)</h4>
+    <h4 class="name" id=".initMembers"><span class="type-signature">&lt;protected, static> </span>initMembers()</h4>
     
     
 </dt>
@@ -254,7 +315,85 @@
 
     
     <div class="description">
-        Sets a property for this tile.
+        Initializes member variables.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".update"><span class="type-signature">&lt;protected, static> </span>update(time)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Updates this manager.
     </div>
     
 
@@ -289,13 +428,13 @@
 
         <tr>
             
-                <td class="name"><code>property</code></td>
+                <td class="name"><code>time</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type">DOMHighResTimeStamp</span>
 
 
 
@@ -306,31 +445,7 @@
 
             
 
-            <td class="description last">The key of the property.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>value</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The (new) value of the property.</td>
+            <td class="description last">A timestamp as given by requestAnimationFrame</td>
         </tr>
 
     

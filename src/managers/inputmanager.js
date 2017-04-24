@@ -142,13 +142,21 @@ InputManager.initMembers = function() {
   }
   // Set gamepad data
   this.gamepads = [];
+  for(var a = 0;a < 16;a++) {
+    this.gamepads.push(new Input_Gamepad());
+  }
 }
 
 /**
  * Called every frame before game updates.
  */
 InputManager.update = function() {
-  
+  // Update gamepads
+  this.scanGamepads();
+  for(var a = 0;a < this.gamepads.length;a++) {
+    var gamepad = this.gamepads[a];
+    gamepad.update();
+  }
 }
 
 /**
@@ -311,17 +319,43 @@ InputManager.convertKeyboardEventToButton = function(e) {
 }
 
 /**
+ * Adds a gamepad.
+ * @param {Gamepad} gamepad - The JavaScript Gamepad to add.
+ */
+InputManager.addGamepad = function(gamepad) {
+  this.gamepads[gamepad.index].onConnect.dispatch([gamepad]);
+}
+
+/**
+ * Removes a gamepad.
+ * @param {Gamepad} gamepad - The JavaScript Gamepad object to remove.
+ */
+InputManager.removeGamepad = function(gamepad) {
+  for(var a = 0;a < this.gamepads.length;a++) {
+    if(this.gamepads[a].gamepad === gamepad) this.gamepads[a].onDisconnect.dispatch();
+  }
+}
+
+/**
+ * Scans for gamepads.
+ */
+InputManager.scanGamepads = function() {
+  var gamepads = navigator.getGamepads ? navigator.getGamepads() : (navigator.webkitGetGamepads ? navigator.webkitGetGamepads() : []);
+  for(var a = 0;a < gamepads.length;a++) {
+    var gamepad = gamepads[a];
+    if(gamepad) {
+      this.addGamepad(gamepad);
+    }
+  }
+}
+
+/**
  * Event listener for a gamepad connect event.
  * @param {Object} e - The event associated with this listener.
  * @protected
  */
 InputManager._onGamepadConnect = function(e) {
-  var gamepads = navigator.getGamepads();
-  for(var a = 0;a < gamepads.length;a++) {
-    var gamepad = gamepads[a];
-    if(!!gamepad && this.gamepads.indexOf(gamepad) === -1) this.gamepads.push(gamepad);
-  }
-  this.sortGamepads();
+  this.addGamepad(e.gamepad);
 }
 
 /**
@@ -330,16 +364,5 @@ InputManager._onGamepadConnect = function(e) {
  * @protected
  */
 InputManager._onGamepadDisconnect = function(e) {
-}
-
-/**
- * Sorts the gamepad array by their index.
- */
-InputManager.sortGamepads = function() {
-  this.gamepads = this.gamepads.sort(function(a, b) {
-    if(a.index > b.index) return 1;
-    if(a.index < b.index) return -1;
-    return 0;
-  });
-  console.log(this.gamepads);
+  this.removeGamepad(e.gamepad);
 }

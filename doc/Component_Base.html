@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Documentation Class: Tile</title>
+	<title>Documentation Class: Component_Base</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -72,16 +72,16 @@
 		<div id="main">
 			
 
-	<h1 class="page-title">Class: Tile</h1>
+	<h1 class="page-title">Class: Component_Base</h1>
 <section>
 
 <header>
     
         <h2>
-        Tile
+        Component_Base
         </h2>
         
-            <div class="class-description">A tile for a tile-based map.</div>
+            <div class="class-description">The base for all components.</div>
         
     
 </header>
@@ -93,7 +93,7 @@
         
 <hr>
 <dt>
-    <h4 class="name" id="Tile"><span class="type-signature"></span>new Tile(texture)</h4>
+    <h4 class="name" id="Component_Base"><span class="type-signature"></span>new Component_Base(parent)</h4>
     
     
 </dt>
@@ -132,13 +132,13 @@
 
         <tr>
             
-                <td class="name"><code>texture</code></td>
+                <td class="name"><code>parent</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">PIXI.Texture</span>
+<span class="param-type"><a href="Game_Object.html">Game_Object</a></span>
 
 
 
@@ -149,7 +149,7 @@
 
             
 
-            <td class="description last">The texture used for this tile.</td>
+            <td class="description last">The game object that this component belongs to.</td>
         </tr>
 
     
@@ -217,15 +217,6 @@
     </div>
 
     
-        <h3 class="subsection-title">Extends</h3>
-
-        
-
-
-    <ul>
-        <li>PIXI.Sprite</li>
-    </ul>
-
 
     
 
@@ -236,7 +227,80 @@
     
 
     
+        <h3 class="subsection-title">Members</h3>
 
+        <dl>
+            
+<hr>
+<dt class="name" id="parent">
+    <h4 id="parent"><span class="type-signature"></span>parent<span class="type-signature"> :<a href="Game_Object.html">Game_Object</a></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        The game object that this component belongs to.
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="Game_Object.html">Game_Object</a></span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        </dl>
     
 
     
@@ -246,7 +310,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id="setProperty"><span class="type-signature"></span>setProperty(property, value)</h4>
+    <h4 class="name" id="update"><span class="type-signature">&lt;abstract> </span>update()</h4>
     
     
 </dt>
@@ -254,7 +318,7 @@
 
     
     <div class="description">
-        Sets a property for this tile.
+        Called every frame.
     </div>
     
 
@@ -263,80 +327,6 @@
     
 
     
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>property</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The key of the property.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>value</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The (new) value of the property.</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
     
 
     

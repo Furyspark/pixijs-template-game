@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Documentation Class: Tile</title>
+	<title>Documentation Class: Layer_Object</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -72,16 +72,16 @@
 		<div id="main">
 			
 
-	<h1 class="page-title">Class: Tile</h1>
+	<h1 class="page-title">Class: Layer_Object</h1>
 <section>
 
 <header>
     
         <h2>
-        Tile
+        Layer_Object
         </h2>
         
-            <div class="class-description">A tile for a tile-based map.</div>
+            <div class="class-description">Layer containing game objects.</div>
         
     
 </header>
@@ -93,7 +93,7 @@
         
 <hr>
 <dt>
-    <h4 class="name" id="Tile"><span class="type-signature"></span>new Tile(texture)</h4>
+    <h4 class="name" id="Layer_Object"><span class="type-signature"></span>new Layer_Object(map, src)</h4>
     
     
 </dt>
@@ -132,13 +132,13 @@
 
         <tr>
             
-                <td class="name"><code>texture</code></td>
+                <td class="name"><code>map</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">PIXI.Texture</span>
+<span class="param-type"><a href="Game_Map.html">Game_Map</a></span>
 
 
 
@@ -149,7 +149,31 @@
 
             
 
-            <td class="description last">The texture used for this tile.</td>
+            <td class="description last">The map this layer belongs to.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>src</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The layer source as defined in a Tiled map.</td>
         </tr>
 
     
@@ -223,7 +247,7 @@
 
 
     <ul>
-        <li>PIXI.Sprite</li>
+        <li><a href="Layer_Base.html">Layer_Base</a></li>
     </ul>
 
 
@@ -238,6 +262,237 @@
     
 
     
+        <h3 class="subsection-title">Members</h3>
+
+        <dl>
+            
+<hr>
+<dt class="name" id="map">
+    <h4 id="map"><span class="type-signature"></span>map<span class="type-signature"> :<a href="Game_Map.html">Game_Map</a></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        The map this layer belongs to.
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="Game_Map.html">Game_Map</a></span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="Layer_Base.html#map">Layer_Base#map</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="objects">
+    <h4 id="objects"><span class="type-signature"></span>objects<span class="type-signature"> :<a href="Array.html">Array</a>.&lt;<a href="Game_Object.html">Game_Object</a>></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Objects in this layer.
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="Array.html">Array</a>.&lt;<a href="Game_Object.html">Game_Object</a>></span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="root">
+    <h4 id="root"><span class="type-signature"></span>root<span class="type-signature"> :PIXI.Container</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Root of this layer's display objects
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">PIXI.Container</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Layer_Base.html#root">Layer_Base#root</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        </dl>
+    
 
     
         <h3 class="subsection-title">Methods</h3>
@@ -246,7 +501,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id="setProperty"><span class="type-signature"></span>setProperty(property, value)</h4>
+    <h4 class="name" id="createObjectBySource"><span class="type-signature"></span>createObjectBySource(src)</h4>
     
     
 </dt>
@@ -254,7 +509,7 @@
 
     
     <div class="description">
-        Sets a property for this tile.
+        Creates an object from a Tiled object source.
     </div>
     
 
@@ -289,31 +544,7 @@
 
         <tr>
             
-                <td class="name"><code>property</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The key of the property.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>value</code></td>
+                <td class="name"><code>src</code></td>
             
 
             <td class="type">
@@ -330,7 +561,287 @@
 
             
 
-            <td class="description last">The (new) value of the property.</td>
+            <td class="description last">The source data for the object.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="getObjectProperties"><span class="type-signature"></span>getObjectProperties(src)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Retrieve properties for a Tiled object.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>src</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The source data for the object.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    An object containing the property hashes for the object.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="parse"><span class="type-signature">&lt;protected> </span>parse(src)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Parses the layer from a source.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>src</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The layer source as defined in a Tiled map.</td>
         </tr>
 
     

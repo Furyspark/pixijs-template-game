@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Documentation Class: Tile</title>
+	<title>Documentation Class: Game_Object</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -72,16 +72,16 @@
 		<div id="main">
 			
 
-	<h1 class="page-title">Class: Tile</h1>
+	<h1 class="page-title">Class: Game_Object</h1>
 <section>
 
 <header>
     
         <h2>
-        Tile
+        Game_Object
         </h2>
         
-            <div class="class-description">A tile for a tile-based map.</div>
+            <div class="class-description">The base for all game objects.</div>
         
     
 </header>
@@ -93,12 +93,183 @@
         
 <hr>
 <dt>
-    <h4 class="name" id="Tile"><span class="type-signature"></span>new Tile(texture)</h4>
+    <h4 class="name" id="Game_Object"><span class="type-signature"></span>new Game_Object()</h4>
     
     
 </dt>
 <dd>
 
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        <dl>
+            
+<hr>
+<dt class="name" id="components">
+    <h4 id="components"><span class="type-signature"></span>components<span class="type-signature"> :<a href="Array.html">Array</a>.&lt;<a href="Component_Base.html">Component_Base</a>></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Storage space of this object's components.
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="Array.html">Array</a>.&lt;<a href="Component_Base.html">Component_Base</a>></span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        </dl>
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        <dl>
+            
+<hr>
+<dt>
+    <h4 class="name" id="attachComponent"><span class="type-signature"></span>attachComponent(component)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Attaches a component to this object.
+    </div>
     
 
     
@@ -132,13 +303,13 @@
 
         <tr>
             
-                <td class="name"><code>texture</code></td>
+                <td class="name"><code>component</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">PIXI.Texture</span>
+<span class="param-type"><a href="Component_Base.html">Component_Base</a></span>
 
 
 
@@ -149,7 +320,463 @@
 
             
 
-            <td class="description last">The texture used for this tile.</td>
+            <td class="description last">A new component to add.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    The newly inserted component.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Component_Base.html">Component_Base</a></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="getComponents"><span class="type-signature"></span>getComponents(component)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Returns a list with the components of the specified type on this object.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>component</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Component_Base.html">Component_Base</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The component to list.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    An array containing this object's components of the specified type.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Array.html">Array</a>.&lt;<a href="Component_Base.html">Component_Base</a>></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="hasComponent"><span class="type-signature"></span>hasComponent(component)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Checks whether this object has a component of a given type.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>component</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Component_Base.html">Component_Base</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The component to check for.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    Whether this object has a component of the given type.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Boolean</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="removeComponent"><span class="type-signature"></span>removeComponent(component)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Removes a component from this object.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>component</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Component_Base.html">Component_Base</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The component to remove.</td>
         </tr>
 
     
@@ -213,40 +840,11 @@
     
 </dd>
 
-    
-    </div>
-
-    
-        <h3 class="subsection-title">Extends</h3>
-
         
-
-
-    <ul>
-        <li>PIXI.Sprite</li>
-    </ul>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <h3 class="subsection-title">Methods</h3>
-
-        <dl>
             
 <hr>
 <dt>
-    <h4 class="name" id="setProperty"><span class="type-signature"></span>setProperty(property, value)</h4>
+    <h4 class="name" id="update"><span class="type-signature"></span>update()</h4>
     
     
 </dt>
@@ -254,7 +852,7 @@
 
     
     <div class="description">
-        Sets a property for this tile.
+        Updates this object's logic.
     </div>
     
 
@@ -263,80 +861,6 @@
     
 
     
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>property</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The key of the property.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>value</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The (new) value of the property.</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
     
 
     

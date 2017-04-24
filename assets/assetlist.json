@@ -17,6 +17,10 @@
     {
       "key": "bgmTheme",
       "url": "assets/audio/music/theme.ogg"
+    },
+    {
+      "key": "sndYippie",
+      "url": "assets/audio/snd/yippie.ogg"
     }
   ]
 }

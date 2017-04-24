@@ -15,6 +15,8 @@ var data = {
       "src/basic/spritesheet.js",
       "src/basic/camera.js",
       "src/basic/input_key.js",
+      "src/basic/input_gamepad.js",
+      "src/basic/sound.js",
 
       "src/core.js",
 
@@ -53,7 +55,7 @@ var data = {
 
 gulp.task("game", function() {
   gulp.src(data.app.sources)
-    .pipe(concat(data.app.target.fn, { newLine: "\n" }))
+    .pipe(concat(data.app.target.fn, { newLine: "\r\n" }))
     .pipe(gulp.dest(data.app.target.dir));
 });
 

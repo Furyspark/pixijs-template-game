@@ -28,3 +28,9 @@ Scene_Game.prototype.start = function() {
   );
   map.load("assets/maps/test.json");
 }
+
+/**
+ * Updates this scene's logic once evey frame.
+ */
+Scene_Game.prototype.update = function() {
+}
