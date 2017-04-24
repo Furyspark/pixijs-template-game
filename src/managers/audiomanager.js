@@ -66,3 +66,10 @@ AudioManager.playMusic = function(howl, volume) {
   this.music.loop = true;
   return this.music;
 }
+
+/**
+ * Stops the currently playing music.
+ */
+AudioManager.stopMusic = function() {
+  if(this.music) this.music.stop();
+}
