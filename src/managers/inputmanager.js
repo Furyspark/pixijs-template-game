@@ -138,8 +138,17 @@ InputManager.initMembers = function() {
   ];
   for(var a = 0;a < keys.length;a++) {
     var keyName = keys[a];
-    this.buttons[keyName] = new Key();
+    this.buttons[keyName] = new Input_Key();
   }
+  // Set gamepad data
+  this.gamepads = [];
+}
+
+/**
+ * Called every frame before game updates.
+ */
+InputManager.update = function() {
+  
 }
 
 /**
@@ -159,6 +168,10 @@ InputManager.attachBasicEvents = function() {
   window.addEventListener("keydown", this._onKeyDown.bind(this));
   // Key up
   window.addEventListener("keyup", this._onKeyUp.bind(this));
+  // Connect gamepad
+  window.addEventListener("gamepadconnected", this._onGamepadConnect.bind(this));
+  // Disconnect gamepad
+  window.addEventListener("gamepaddisconnected",this._onGamepadDisconnect.bind(this));
 }
 
 /**
@@ -295,4 +308,38 @@ InputManager.convertKeyboardEventToButton = function(e) {
   else if(key === ")") key = "0";
   // Return results
   return key;
+}
+
+/**
+ * Event listener for a gamepad connect event.
+ * @param {Object} e - The event associated with this listener.
+ * @protected
+ */
+InputManager._onGamepadConnect = function(e) {
+  var gamepads = navigator.getGamepads();
+  for(var a = 0;a < gamepads.length;a++) {
+    var gamepad = gamepads[a];
+    if(!!gamepad && this.gamepads.indexOf(gamepad) === -1) this.gamepads.push(gamepad);
+  }
+  this.sortGamepads();
+}
+
+/**
+ * Event listener for a gamepad disconnect event.
+ * @param {Object} e - The event associated with this listener.
+ * @protected
+ */
+InputManager._onGamepadDisconnect = function(e) {
+}
+
+/**
+ * Sorts the gamepad array by their index.
+ */
+InputManager.sortGamepads = function() {
+  this.gamepads = this.gamepads.sort(function(a, b) {
+    if(a.index > b.index) return 1;
+    if(a.index < b.index) return -1;
+    return 0;
+  });
+  console.log(this.gamepads);
 }
