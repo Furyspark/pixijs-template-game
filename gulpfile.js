@@ -18,6 +18,8 @@ var data = {
       "src/basic/input_gamepad.js",
       "src/basic/input_pointer.js",
       "src/basic/sound.js",
+      "src/basic/animationcontroller.js",
+      "src/basic/animation.js",
 
       "src/core.js",
 
