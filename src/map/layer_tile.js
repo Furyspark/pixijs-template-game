@@ -79,3 +79,8 @@ Layer_Tile.prototype.setTile = function(index, tile) {
   tile.x = pos.x * this.map.src.tilewidth;
   tile.y = pos.y * this.map.src.tileheight;
 }
+
+/**
+ * Updates this layer.
+ */
+Layer_Tile.prototype.update = function() {}
