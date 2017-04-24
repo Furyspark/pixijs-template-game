@@ -16,6 +16,7 @@ var data = {
       "src/basic/camera.js",
       "src/basic/input_key.js",
       "src/basic/input_gamepad.js",
+      "src/basic/input_pointer.js",
       "src/basic/sound.js",
 
       "src/core.js",
