@@ -19,27 +19,21 @@ InputManager.start = function() {
  */
 InputManager.initMembers = function() {
   /**
-   * An object with certain input positions.
-   * Contains a variable 'mouse', which contains variables 'screen' and 'game', which are both points.
-   * @type {Object}
+   * The mouse compared to the screen.
+   * @type {Input_Pointer}
    * @readonly
-   * @example
-   * sprite.x = InputManager.position.mouse.game.x
-   * sprite.y = InputManager.position.mouse.game.x
-   * @example
-   * // Returns whether the mouse position is in the top-left corner of the screen.
-   * if(InputManager.position.mouse.screen.x === 0 && InputManager.position.mouse.screen.y === 0) {
-   *   this.doSomething();
-   * }
-   * @alias position
+   * @alias mouseScreen
    * @memberof InputManager
    */
-  this.position = {
-    mouse: {
-      screen: new Point(),
-      game: new Point()
-    }
-  };
+  this.mouseScreen = new Input_Pointer();
+  /**
+   * The mouse compared to the game.
+   * @type {Input_Pointer}
+   * @readonly
+   * @alias mouseGame
+   * @memberof InputManager
+   */
+  this.mouseGame = new Input_Pointer();
   // Add buttons
   /**
    * A dictionary for keyboard and mouse buttons.
@@ -218,7 +212,7 @@ InputManager.attachBasicEvents = function() {
  * @protected
  */
 InputManager._onMouseMoveScreen = function(e) {
-  this.position.mouse.screen.set(e.screenX, e.screenY);
+  this.mouseScreen.updatePosition(e.screenX, e.screenY);
 }
 
 /**
@@ -230,7 +224,7 @@ InputManager._onMouseMoveContent = function(e) {
   var rect = Core.renderer.view.getBoundingClientRect();
   var gameX = Math.round((e.clientX - rect.left) * (Core.renderer.width / (rect.right - rect.left)));
   var gameY = Math.round((e.clientY - rect.top) * (Core.renderer.height / (rect.bottom - rect.top)));
-  this.position.mouse.game.set(gameX, gameY);
+  this.mouseGame.updatePosition(gameX, gameY);
 }
 
 /**
