@@ -6,6 +6,15 @@ Game_Object.prototype = Object.create(PIXI.Sprite.prototype);
 Game_Object.prototype.constructor = Game_Object;
 
 /**
+ * @constant
+ */
+Game_Object.PROPERTY_SOURCE_INSTANCE = 0;
+/**
+ * @constant
+ */
+Game_Object.PROPERTY_SOURCE_OBJECT = 1;
+
+/**
  * @class
  * The base for all game objects.
  * @constructs Game_Object
@@ -88,4 +97,17 @@ Game_Object.prototype.getComponents = function(component) {
     if(test instanceof component) result.push(test);
   }
   return result;
+}
+
+/**
+ * Retrieves Tiled properties for this object.
+ * @param {number} source - The source of this property. Look for Game_Object.PROPERTY_SOURCE_* variables.
+ * @param {string} key - The name of the property to look for.
+ * @returns {Object} The value of the property, or undefined if no property was found.
+ */
+Game_Object.prototype.getProperty = function(source, key) {
+  var src = "instance";
+  if(source === Game_Object.PROPERTY_SOURCE_OBJECT) src = "object";
+  if(!this.tiledProperties[src]) return undefined;
+  return this.tiledProperties[src][key];
 }
