@@ -25,7 +25,7 @@ Input_Pointer.prototype.initialize = function() {
 /**
  * Updates position from InputManager.update.
  */
-Input_Pointer.updatePosition = function(x, y) {
+Input_Pointer.prototype.updatePosition = function(x, y) {
   var prevX = this.position.x;
   var prevY = this.position.y;
   this.position.set(x, y);
