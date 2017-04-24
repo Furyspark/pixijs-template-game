@@ -11,21 +11,33 @@ Game_Object.prototype.constructor = Game_Object;
  * @constructs Game_Object
  */
 Game_Object.prototype.initialize = function() {
+  PIXI.Sprite.call(this);
   /**
    * Storage space of this object's components.
    * @type {Array.<Component_Base>}
    */
   this.components = [];
+  /**
+   * The animation controller for this game object.
+   * @type {AnimationController}
+   */
+  this.animation = new AnimationController(this);
+
+  // Set anchor
+  this.anchor.set(0.5, 0.5);
 }
 
 /**
  * Updates this object's logic.
  */
 Game_Object.prototype.update = function() {
+  // Update components
   for(var a = 0;a < this.components.length;a++) {
     var comp = this.components[a];
     comp.update();
   }
+  // Update animations
+  this.animation.update();
 }
 
 /**

@@ -135,3 +135,12 @@ Game_Map.prototype.getPosition = function(index) {
 Game_Map.prototype.getIndex = function(x, y) {
   return x + y * this.src.width;
 }
+
+/**
+ * Updates the map.
+ */
+Game_Map.prototype.update = function() {
+  this.layers.forEach(function(layer) {
+    layer.update();
+  });
+}

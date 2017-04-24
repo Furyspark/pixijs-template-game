@@ -22,3 +22,9 @@ Layer_Base.prototype.initialize = function(map) {
 
   this.map.stage.addChild(this.root);
 }
+
+/**
+ * Updates this layer.
+ * @abstract
+ */
+Layer_Base.prototype.update = function() {}

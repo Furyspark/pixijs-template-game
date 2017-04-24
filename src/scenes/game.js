@@ -20,7 +20,14 @@ Scene_Game.prototype.initialize = function() {
  */
 Scene_Game.prototype.start = function() {
   Scene_Base.prototype.start.call(this);
+  /**
+   * The open maps.
+   * @type {Array.<Game_Map>}
+   */
+  this.maps = [];
+
   var map = new Game_Map();
+  this.maps.push(map);
   var cam = this.addCamera(
     new Rect(0, 0, 400, 300),
     new Rect(0, 0, 800, 600),
@@ -33,4 +40,8 @@ Scene_Game.prototype.start = function() {
  * Updates this scene's logic once evey frame.
  */
 Scene_Game.prototype.update = function() {
+  Scene_Base.prototype.update.call(this);
+  this.maps.forEach(function(map) {
+    map.update();
+  });
 }

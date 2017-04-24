@@ -14,6 +14,7 @@ Layer_Object.prototype.constructor = Layer_Object;
  * @augments Layer_Base
  */
 Layer_Object.prototype.initialize = function(map, src) {
+  Layer_Base.prototype.initialize.call(this, map);
   /**
    * Objects in this layer.
    * @type {Array.<Game_Object>}
@@ -82,6 +83,9 @@ Layer_Object.prototype.createObjectBySource = function(src) {
   params.unshift(cls);
   // Create game object
   var obj = new (Function.prototype.bind.apply(cls, params));
+  obj.x = placement.x + placement.width * 0.5;
+  obj.y = placement.y + placement.height;
+  this.root.addChild(obj);
 }
 
 /**
@@ -100,4 +104,14 @@ Layer_Object.prototype.getObjectProperties = function(src) {
     if(!!obj) properties.object = obj;
   }
   return properties;
+}
+
+/**
+ * Updates this layer.
+ */
+Layer_Object.prototype.update = function() {
+  Layer_Base.prototype.update.call(this);
+  this.root.children.forEach(function(obj) {
+    obj.update();
+  });
 }
