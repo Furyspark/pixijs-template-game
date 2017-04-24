@@ -83,6 +83,7 @@ Layer_Object.prototype.createObjectBySource = function(src) {
   params.unshift(cls);
   // Create game object
   var obj = new (Function.prototype.bind.apply(cls, params));
+  obj.tiledProperties = properties;
   obj.x = placement.x + placement.width * 0.5;
   obj.y = placement.y + placement.height;
   this.root.addChild(obj);

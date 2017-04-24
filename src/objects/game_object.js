@@ -22,6 +22,11 @@ Game_Object.prototype.initialize = function() {
    * @type {AnimationController}
    */
   this.animation = new AnimationController(this);
+  /**
+   * The Tiled properties for this object.
+   * @type {Object.<string, Object>}
+   */
+  this.tiledProperties = {};
 
   // Set anchor
   this.anchor.set(0.5, 0.5);
