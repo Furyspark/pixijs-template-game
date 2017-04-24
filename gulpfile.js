@@ -14,7 +14,7 @@ var data = {
       "src/basic/loader.js",
       "src/basic/spritesheet.js",
       "src/basic/camera.js",
-      "src/basic/key.js",
+      "src/basic/input_key.js",
 
       "src/core.js",
 

@@ -1,13 +1,13 @@
-function Key() {
+function Input_Key() {
   this.initialize.apply(this, arguments);
 }
 
 /**
  * @class
  * An abstract object for an input button.
- * @constructs Key
+ * @constructs Input_Key
  */
-Key.prototype.initialize = function() {
+Input_Key.prototype.initialize = function() {
   /**
    * Indicates whether this key is being held down currently.
    * @type {Boolean}
@@ -31,7 +31,7 @@ Key.prototype.initialize = function() {
  * Adds basic events for this key.
  * @protected
  */
-Key.prototype.attachBasicEvents = function() {
+Input_Key.prototype.attachBasicEvents = function() {
   this.onPress.add(function() {
     this.down = true;
   }, this, [], 100);
