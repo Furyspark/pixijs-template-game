@@ -37,7 +37,7 @@ Scene_Game.prototype.start = function() {
 }
 
 /**
- * Updates this scene's logic once evey frame.
+ * Updates this scene's logic once every frame.
  */
 Scene_Game.prototype.update = function() {
   Scene_Base.prototype.update.call(this);
