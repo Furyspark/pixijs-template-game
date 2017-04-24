@@ -43,7 +43,6 @@ Object.defineProperties(Input_Gamepad.prototype, {
 /**
  * @class
  * A wrapper for a JavaScript Gamepad.
- * @param {Gamepad} gamepad - The JavaScript Gamepad object.
  * @constructs Input_Gamepad
  */
 Input_Gamepad.prototype.initialize = function() {

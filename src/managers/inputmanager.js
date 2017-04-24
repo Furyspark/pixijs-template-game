@@ -18,6 +18,22 @@ InputManager.start = function() {
  * @protected
  */
 InputManager.initMembers = function() {
+  /**
+   * An object with certain input positions.
+   * Contains a variable 'mouse', which contains variables 'screen' and 'game', which are both points.
+   * @type {Object}
+   * @readonly
+   * @example
+   * sprite.x = InputManager.position.mouse.game.x
+   * sprite.y = InputManager.position.mouse.game.x
+   * @example
+   * // Returns whether the mouse position is in the top-left corner of the screen.
+   * if(InputManager.position.mouse.screen.x === 0 && InputManager.position.mouse.screen.y === 0) {
+   *   this.doSomething();
+   * }
+   * @alias position
+   * @memberof InputManager
+   */
   this.position = {
     mouse: {
       screen: new Point(),
@@ -25,6 +41,13 @@ InputManager.initMembers = function() {
     }
   };
   // Add buttons
+  /**
+   * A dictionary for keyboard and mouse buttons.
+   * @type {Object.<Input_Key>}
+   * @readonly
+   * @alias buttons
+   * @memberof InputManager
+   */
   this.buttons = {};
   var keys = [
     "Alt",
@@ -141,6 +164,13 @@ InputManager.initMembers = function() {
     this.buttons[keyName] = new Input_Key();
   }
   // Set gamepad data
+  /**
+   * Contains 16 gamepads, not all of which may be connected.
+   * @type {Array.<Input_Gamepad>}
+   * @readonly
+   * @alias gamepads
+   * @memberof InputManager
+   */
   this.gamepads = [];
   for(var a = 0;a < 16;a++) {
     this.gamepads.push(new Input_Gamepad());

@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Documentation Class: Layer_Tile</title>
+	<title>Documentation Class: SoundFile</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -72,16 +72,16 @@
 		<div id="main">
 			
 
-	<h1 class="page-title">Class: Layer_Tile</h1>
+	<h1 class="page-title">Class: SoundFile</h1>
 <section>
 
 <header>
     
         <h2>
-        Layer_Tile
+        SoundFile
         </h2>
         
-            <div class="class-description">Layer containing tiles.</div>
+            <div class="class-description">Contains info on a HowlerJS sound.</div>
         
     
 </header>
@@ -93,7 +93,7 @@
         
 <hr>
 <dt>
-    <h4 class="name" id="Layer_Tile"><span class="type-signature"></span>new Layer_Tile(map, src)</h4>
+    <h4 class="name" id="SoundFile"><span class="type-signature"></span>new SoundFile(howl, id)</h4>
     
     
 </dt>
@@ -132,13 +132,13 @@
 
         <tr>
             
-                <td class="name"><code>map</code></td>
+                <td class="name"><code>howl</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">Object</span>
+<span class="param-type">Howl</span>
 
 
 
@@ -149,20 +149,20 @@
 
             
 
-            <td class="description last">The map this layer belongs to.</td>
+            <td class="description last">The Howl associated with this SoundFile.</td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>src</code></td>
+                <td class="name"><code>id</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">Object</span>
+<span class="param-type">number</span>
 
 
 
@@ -173,7 +173,7 @@
 
             
 
-            <td class="description last">The layer source as defined in a Tiled map.</td>
+            <td class="description last">The ID for this SoundFile's Howl.</td>
         </tr>
 
     
@@ -241,17 +241,6 @@
     </div>
 
     
-        <h3 class="subsection-title">Extends</h3>
-
-        
-
-
-    <ul>
-        <li><a href="Layer_Base.html">Layer_Base</a></li>
-    </ul>
-
-
-    
 
     
 
@@ -267,15 +256,15 @@
         <dl>
             
 <hr>
-<dt class="name" id="map">
-    <h4 id="map"><span class="type-signature"></span>map<span class="type-signature"> :<a href="Game_Map.html">Game_Map</a></span></h4>
+<dt class="name" id="howl">
+    <h4 id="howl"><span class="type-signature">&lt;readonly> </span>howl<span class="type-signature"> :Howl</span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        The map for this layer.
+        The Howl associated with this SoundFile.
     </div>
     
 
@@ -284,7 +273,7 @@
         <ul>
             <li>
                 
-<span class="param-type"><a href="Game_Map.html">Game_Map</a></span>
+<span class="param-type">Howl</span>
 
 
 
@@ -300,15 +289,6 @@
 
 	
 
-	
-	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
-	<dd class="inherited-from">
-		<ul class="dummy">
-			<li>
-				<a href="Layer_Base.html#map">Layer_Base#map</a>
-			</li>
-		</ul>
-	</dd>
 	
 
     
@@ -347,15 +327,15 @@
         
             
 <hr>
-<dt class="name" id="root">
-    <h4 id="root"><span class="type-signature"></span>root<span class="type-signature"> :PIXI.Container</span></h4>
+<dt class="name" id="howlId">
+    <h4 id="howlId"><span class="type-signature">&lt;readonly> </span>howlId<span class="type-signature"> :number</span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        Root of this layer's display objects
+        The ID for this SoundFile's Howl.
     </div>
     
 
@@ -364,7 +344,7 @@
         <ul>
             <li>
                 
-<span class="param-type">PIXI.Container</span>
+<span class="param-type">number</span>
 
 
 
@@ -380,15 +360,6 @@
 
 	
 
-	
-	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
-	<dd class="inherited-from">
-		<ul class="dummy">
-			<li>
-				<a href="Layer_Base.html#root">Layer_Base#root</a>
-			</li>
-		</ul>
-	</dd>
 	
 
     
@@ -427,15 +398,15 @@
         
             
 <hr>
-<dt class="name" id="tiles">
-    <h4 id="tiles"><span class="type-signature"></span>tiles<span class="type-signature"> :<a href="Array.html">Array</a>.&lt;<a href="Tile.html">Tile</a>></span></h4>
+<dt class="name" id="loop">
+    <h4 id="loop"><span class="type-signature"></span>loop<span class="type-signature"> :Boolean</span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        Tiles in this layer.
+        Sets or gets whether this sound is looping.
     </div>
     
 
@@ -444,7 +415,78 @@
         <ul>
             <li>
                 
-<span class="param-type"><a href="Array.html">Array</a>.&lt;<a href="Tile.html">Tile</a>></span>
+<span class="param-type">Boolean</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="volume">
+    <h4 id="volume"><span class="type-signature"></span>volume<span class="type-signature"> :number</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Sets or gets the volume of this sound.
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">number</span>
 
 
 
@@ -505,7 +547,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id="clear"><span class="type-signature"></span>clear()</h4>
+    <h4 class="name" id="stop"><span class="type-signature"></span>stop()</h4>
     
     
 </dt>
@@ -513,7 +555,7 @@
 
     
     <div class="description">
-        Clears the tiles in this layer.
+        Stops this sound.
     </div>
     
 
@@ -522,286 +564,6 @@
     
 
     
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="parse"><span class="type-signature">&lt;protected> </span>parse(src)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Parses the layer from a source.
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>src</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The layer source as defined in a Tiled map.</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="setTile"><span class="type-signature"></span>setTile(index, tile)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Sets a tile to a slot in this layer.
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>index</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The index to set a tile for.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>tile</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="Tile.html">Tile</a></span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The tile to place.</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
     
 
     
